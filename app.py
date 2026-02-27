@@ -7,7 +7,7 @@ st.set_page_config(page_title="Marketing KPI Scorecard", layout="wide", page_ico
 
 # 1. Bağlantı Kurulumu (Tamamen Secrets üzerinden)
 try:
-    SHEET_URL = st.secrets["gsheet_url"]
+   SHEET_URL = st.secrets.connections.gsheets.spreadsheet
     conn = st.connection("gsheets", type=GSheetsConnection)
 except Exception as e:
     st.error("Bağlantı Hatası: Lütfen Streamlit Secrets ayarlarını kontrol edin.")
