@@ -5,9 +5,8 @@ import pandas as pd
 # Page Configuration
 st.set_page_config(page_title="Marketing KPI Scorecard", layout="wide")
 
-# 1. Connection Setup
-# We use st.secrets for security. If not set, it falls back to your direct link.
-SHEET_URL = st.secrets.get("gsheet_url", "https://docs.google.com/spreadsheets/d/105MArVvi9F43RpE2FMzKAqXyJ0tSjD4_0DM5zHZZypw/edit#gid=1421556044")
+# 1. Connection Setup# URL'i direkt yazmıyoruz, Streamlit'in gizli kasasından çekiyoruz
+SHEET_URL = st.secrets["gsheet_url"]
 
 conn = st.connection("gsheets", type=GSheetsConnection)
 
